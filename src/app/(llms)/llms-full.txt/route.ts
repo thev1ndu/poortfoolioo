@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { SITE_INFO } from "@/config/site";
 import { getAllPosts } from "@/features/blog/data/posts";
 import { getLLMText } from "@/features/blog/lib/get-llm-text";
-import { AWARDS } from "@/features/profile/data/volunteering";
+import { VOLUNTEERING } from "@/features/profile/data/volunteering";
 import { CERTIFICATIONS } from "@/features/profile/data/certifications";
 import { EXPERIENCES } from "@/features/profile/data/experiences";
 import { PROJECTS } from "@/features/profile/data/projects";
@@ -39,7 +39,13 @@ ${EXPERIENCES.map((item) =>
   item.positions
     .map((position) => {
       const skills = position.skills?.map((skill) => skill).join(", ") || "N/A";
-      return `### ${position.title} | ${item.companyName}\n\nDuration: ${position.employmentPeriod.start} - ${position.employmentPeriod.end || "Present"}\n\nSkills: ${skills}\n\n${position.description?.trim()}`;
+      return `### ${position.title} | ${item.companyName}
+
+Duration: ${position.employmentPeriod.start} - ${position.employmentPeriod.end || "Present"}
+
+Skills: ${skills}
+
+${position.description?.trim()}`;
     })
     .join("\n\n")
 ).join("\n\n")}
@@ -50,13 +56,23 @@ const projectsText = `## Projects
 ${PROJECTS.map((item) => {
   const skills = `\n\nSkills: ${item.skills.join(", ")}`;
   const description = item.description ? `\n\n${item.description.trim()}` : "";
-  return `### ${item.title}\n\nProject URL: ${item.link}${skills}${description}`;
+  return `### ${item.title}
+
+Project URL: ${item.link}${skills}${description}`;
 }).join("\n\n")}
 `;
 
-const awardsText = `## Awards
+// ✅ New: Volunteering section (matches your first snippet’s structure)
+const volunteeringText = `## Volunteering
 
-${AWARDS.map((item) => `### ${item.prize} | ${item.title}\n\n${item.description}`).join("\n\n")}
+${VOLUNTEERING.map((item) => `### ${item.role} @ ${item.title}
+
+**Category:** ${item.category}  
+**Date:** ${item.date}
+
+${item.description ? item.description.trim() : ""}
+
+${item.referenceLink ? `[Reference Link](${item.referenceLink})` : ""}`).join("\n\n")}
 `;
 
 const certificationsText = `## Certifications
@@ -76,14 +92,14 @@ async function getBlogContent() {
 async function getContent() {
   return `<SYSTEM>This document contains comprehensive information about ${USER.displayName}'s professional profile, portfolio, and blog content. It includes personal details, work experience, projects, achievements, certifications, and all published blog posts. This data is formatted for consumption by Large Language Models (LLMs) to provide accurate and up-to-date information about ${USER.displayName}'s background, skills, and expertise as a Design Engineer.</SYSTEM>
 
-# chanhdai.com
+# thevinduw.de
 
 > A minimal portfolio, component registry, and blog to showcase my work as a Design Engineer.
 
 ${aboutText}
 ${experienceText}
 ${projectsText}
-${awardsText}
+${volunteeringText}
 ${certificationsText}
 
 ## Blog

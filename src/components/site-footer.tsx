@@ -1,3 +1,4 @@
+import { SITE_INFO } from "@/config/site";
 import { Heart } from "lucide-react";
 
 export function SiteFooter() {
@@ -51,7 +52,14 @@ export function SiteFooter() {
           </a>
         </p>
       </div>
-
+          <a
+              className="flex font-mono text-xs font-medium text-muted-foreground"
+              href={`${SITE_INFO.url}/llms.txt`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              llms.txt
+            </a>
       {/* Safe area fix */}
       <div className="pb-[env(safe-area-inset-bottom,0px)]">
         <div className="h-2" />

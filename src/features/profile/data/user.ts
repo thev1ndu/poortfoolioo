@@ -16,7 +16,7 @@ export const USER: User = {
   address: "Kadawatha, Sri Lanka",
   phoneNumber: "", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "aGVsbG9AdGhldmluZHV3LnRlY2g=", // base64 encoded
-  website: "https://thevinduw.tech",
+  website: "https://thevinduw.de",
   jobTitle: "Design Engineer",
   jobs: [
     {
