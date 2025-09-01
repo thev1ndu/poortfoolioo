@@ -15,7 +15,6 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { Tag } from "@/components/ui/tag";
-import { SimpleTooltip } from "@/components/ui/tooltip";
 import { Prose } from "@/components/ui/typography";
 import { UTM_PARAMS } from "@/config/site";
 import { addQueryParams } from "@/utils/url";
@@ -84,15 +83,15 @@ export function ProjectItem({
               </div>
 
               {/* <SimpleTooltip content="Open Project Link"> */}
-                <a
-                  className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                  href={addQueryParams(project.link, UTM_PARAMS)}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <LinkIcon className="pointer-events-none size-4" />
-                  {/* <span className="sr-only">Open Project Link</span> */}
-                </a>
+              <a
+                className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
+                href={addQueryParams(project.link, UTM_PARAMS)}
+                target="_blank"
+                rel="noopener"
+              >
+                <LinkIcon className="pointer-events-none size-4" />
+                {/* <span className="sr-only">Open Project Link</span> */}
+              </a>
               {/* </SimpleTooltip> */}
 
               <div

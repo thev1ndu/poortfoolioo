@@ -1,6 +1,6 @@
 import {
-  GraduationCap,
   CodeXmlIcon,
+  GraduationCap,
   LightbulbIcon,
 } from "lucide-react";
 

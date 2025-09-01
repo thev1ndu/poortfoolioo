@@ -6,7 +6,6 @@ import { MAIN_NAV } from "@/config/site";
 import { getAllPosts } from "@/features/blog/data/posts";
 import { cn } from "@/lib/utils";
 
-import { SiteHeaderMark } from "./site-header-mark";
 import { SiteHeaderWrapper } from "./site-header-wrapper";
 import { ToggleTheme } from "./toggle-theme";
 
