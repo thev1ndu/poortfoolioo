@@ -15,7 +15,7 @@ export const USER: User = {
   ],
   address: "Kadawatha, Sri Lanka",
   phoneNumber: "", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  email: "aGVsbG9AdGhldmluZHV3LnRlY2g=", // base64 encoded
+  email: "aXRzdGh3OUBnbWFpbC5jb20=", // base64 encoded
   website: "https://thevinduw.de",
   jobTitle: "Design Engineer",
   jobs: [
@@ -44,8 +44,7 @@ Alongside my personal projects, I also take on freelance work. One of my biggest
 Let’s connect and explore opportunities to grow and build together!`,
 
   avatar: "",
-  ogImage:
-    "",
+  ogImage: "",
   namePronunciationUrl: "",
   keywords: [
     "thevindu",
