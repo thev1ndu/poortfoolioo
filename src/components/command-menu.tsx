@@ -2,16 +2,7 @@
 
 import { useCommandState } from "cmdk";
 import type { LucideProps } from "lucide-react";
-import {
-  BriefcaseBusinessIcon,
-  CircleUserIcon,
-  CornerDownLeftIcon,
-  LetterTextIcon,
-  MoonStarIcon,
-  RssIcon,
-  SunIcon,
-  TextIcon,
-} from "lucide-react";
+import { CornerDownLeftIcon } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -30,8 +21,6 @@ import type { Post } from "@/features/blog/types/post";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { cn } from "@/lib/utils";
 
-import { Icons } from "./icons";
-import { THMark } from "./th-mark";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
@@ -49,12 +38,10 @@ const MENU_LINKS: CommandLinkItem[] = [
   {
     title: "Portfolio",
     href: "/",
-    icon: THMark,
   },
   {
     title: "Blog",
     href: "/blog",
-    icon: RssIcon,
   },
 ];
 
@@ -62,44 +49,28 @@ const DAIFOLIO_LINKS: CommandLinkItem[] = [
   {
     title: "Passion & Journey",
     href: "/#about",
-    icon: LetterTextIcon,
   },
-  // {
-  //   title: "Tech Stack",
-  //   href: "/#stack",
-  //   icon: Icons.ts,
-  // },
   {
-    title: "Experience",
+    title: "Professional Journey",
     href: "/#experience",
-    icon: BriefcaseBusinessIcon,
   },
   {
     title: "Projects",
     href: "/#projects",
-    icon: Icons.project,
   },
   {
-    title: "Honors & Awards",
-    href: "/#awards",
-    icon: Icons.award,
+    title: "Volunteering",
+    href: "/#volunteering",
   },
   {
     title: "Certifications",
     href: "/#certs",
-    icon: Icons.certificate,
-  },
-  {
-    title: "Download vCard",
-    href: "/vcard",
-    icon: CircleUserIcon,
   },
 ];
 
 const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   title: item.title,
   href: item.href,
-  iconImage: item.icon,
   openInNewTab: true,
 }));
 
@@ -150,21 +121,10 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
     [router]
   );
 
-  const handleThemeChange = useCallback(
-    (theme: "light" | "dark" | "system") => {
-      setOpen(false);
-      setTheme(theme);
-    },
-    [setTheme]
-  );
-
-  const { blogLinks, componentLinks } = useMemo(
+  const { blogLinks } = useMemo(
     () => ({
       blogLinks: posts
         .filter((post) => post.metadata?.category !== "components")
-        .map(postToCommandLinkItem),
-      componentLinks: posts
-        .filter((post) => post.metadata?.category === "components")
         .map(postToCommandLinkItem),
     }),
     [posts]
@@ -231,16 +191,7 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
           <CommandLinkGroup
             heading="Blog"
             links={blogLinks}
-            fallbackIcon={TextIcon}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandSeparator />
-
-          <CommandLinkGroup
-            heading="Components"
-            links={componentLinks}
-            fallbackIcon={Icons.react}
+            // fallbackIcon={TextIcon}
             onLinkSelect={handleOpenLink}
           />
 
@@ -253,30 +204,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
           />
 
           <CommandSeparator />
-
-          <CommandGroup heading="Theme">
-            <CommandItem
-              keywords={["theme"]}
-              onSelect={() => handleThemeChange("light")}
-            >
-              <SunIcon />
-              Light
-            </CommandItem>
-            <CommandItem
-              keywords={["theme"]}
-              onSelect={() => handleThemeChange("dark")}
-            >
-              <MoonStarIcon />
-              Dark
-            </CommandItem>
-            <CommandItem
-              keywords={["theme"]}
-              onSelect={() => handleThemeChange("system")}
-            >
-              <Icons.contrast />
-              Auto
-            </CommandItem>
-          </CommandGroup>
         </CommandList>
 
         <CommandMenuFooter />
@@ -351,9 +278,6 @@ function buildCommandMetaMap() {
   commandMetaMap.set("Copy Logotype as SVG", {
     commandKind: "command",
   });
-  commandMetaMap.set("Download Brand Assets", {
-    commandKind: "command",
-  });
 
   SOCIAL_LINK_ITEMS.forEach((item) => {
     commandMetaMap.set(item.title, {
@@ -382,7 +306,7 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 border-t bg-zinc-100/30 px-4 text-xs font-medium dark:bg-zinc-800/30">
-        <THMark className="size-6 text-muted-foreground" aria-hidden />
+        <div className="size-3 text-muted-foreground" aria-hidden />
 
         <div className="flex shrink-0 items-center gap-2">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>

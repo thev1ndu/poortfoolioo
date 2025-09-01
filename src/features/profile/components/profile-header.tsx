@@ -15,7 +15,7 @@ export function ProfileHeader() {
           )}
         >
           <div className="line-clamp-1 font-mono text-xs text-zinc-300 select-none max-sm:hidden dark:text-zinc-800">
-            {"text-2xl "}
+            {"text-3xl "}
             <span className="inline dark:hidden">text-zinc-950</span>
             <span className="hidden dark:inline">text-zinc-50</span>
             {" font-medium"}
@@ -23,7 +23,7 @@ export function ProfileHeader() {
         </div>
 
         <div className="border-t border-edge">
-          <h1 className="flex items-center pl-4 text-2xl font-semibold">
+          <h1 className="flex items-center pl-4 text-3xl font-semibold">
             {USER.displayName}
             &nbsp;
             {/* <VerifiedIcon className="size-[0.6em] translate-y-px text-info select-none" /> */}

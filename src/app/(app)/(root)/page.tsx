@@ -3,16 +3,13 @@ import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
 import { About } from "@/features/profile/components/about";
 import { Blog } from "@/features/profile/components/blog";
-import { Brand } from "@/features/profile/components/brand";
 import { Certifications } from "@/features/profile/components/certifications";
 import { Experiences } from "@/features/profile/components/experiences";
 import { Overview } from "@/features/profile/components/overview";
-import { ProfileCover } from "@/features/profile/components/profile-cover";
 import { ProfileHeader } from "@/features/profile/components/profile-header";
 import { Projects } from "@/features/profile/components/projects";
 import { SocialLinks } from "@/features/profile/components/social-links";
 import { Volunteering } from "@/features/profile/components/volunteering";
-// import { TeckStack } from "@/features/profile/components/teck-stack";
 import { USER } from "@/features/profile/data/user";
 import { cn } from "@/lib/utils";
 
@@ -27,7 +24,6 @@ export default function Page() {
       />
 
       <div className="mx-auto md:max-w-3xl">
-        <ProfileCover />
         <ProfileHeader />
         <Separator />
 
@@ -39,9 +35,6 @@ export default function Page() {
 
         <About />
         <Separator />
-
-        {/* <TeckStack />
-        <Separator /> */}
 
         <Blog />
         <Separator />
@@ -56,9 +49,6 @@ export default function Page() {
         <Separator />
 
         <Certifications />
-        <Separator />
-
-        <Brand />
         <Separator />
       </div>
     </>
