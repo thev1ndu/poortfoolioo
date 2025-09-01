@@ -1,24 +1,11 @@
 {
-  "name": "chanhdai.com",
-  "version": "0.1.0",
+  "name": "thevinduw.de",
+  "version": "0.2.0",
   "description": "A minimal portfolio, component registry, and blog.",
-  "homepage": "https://chanhdai.com",
+  "homepage": "https://thevinduw.de",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
-  },
-  "contributors": [
-    {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
-      "url": "https://github.com/ncdai"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "name": "Thevindu W."
   },
   "scripts": {
     "dev": "next dev -p 1408 --turbopack",

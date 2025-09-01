@@ -2,7 +2,7 @@ import { USER } from "@/features/profile/data/user";
 import { cn } from "@/lib/utils";
 import { FlipSentences } from "@/registry/flip-sentences";
 
-import { VerifiedIcon } from "./verified-icon";
+// import { VerifiedIcon } from "./verified-icon";
 
 export function ProfileHeader() {
   return (
@@ -15,7 +15,7 @@ export function ProfileHeader() {
           )}
         >
           <div className="line-clamp-1 font-mono text-xs text-zinc-300 select-none max-sm:hidden dark:text-zinc-800">
-            {"text-3xl "}
+            {"text-2xl "}
             <span className="inline dark:hidden">text-zinc-950</span>
             <span className="hidden dark:inline">text-zinc-50</span>
             {" font-medium"}
@@ -23,10 +23,10 @@ export function ProfileHeader() {
         </div>
 
         <div className="border-t border-edge">
-          <h1 className="flex items-center pl-4 text-3xl font-semibold">
+          <h1 className="flex items-center pl-4 text-2xl font-semibold">
             {USER.displayName}
             &nbsp;
-            <VerifiedIcon className="size-[0.6em] translate-y-px text-info select-none" />
+            {/* <VerifiedIcon className="size-[0.6em] translate-y-px text-info select-none" /> */}
             {/* <SimpleTooltip content="Verified">
               <VerifiedIcon className="size-[0.6em] translate-y-px text-info select-none" />
             </SimpleTooltip> */}
