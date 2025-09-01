@@ -65,14 +65,16 @@ Project URL: ${item.link}${skills}${description}`;
 // ✅ New: Volunteering section (matches your first snippet’s structure)
 const volunteeringText = `## Volunteering
 
-${VOLUNTEERING.map((item) => `### ${item.role} @ ${item.title}
+${VOLUNTEERING.map(
+  (item) => `### ${item.role} @ ${item.title}
 
 **Category:** ${item.category}  
 **Date:** ${item.date}
 
 ${item.description ? item.description.trim() : ""}
 
-${item.referenceLink ? `[Reference Link](${item.referenceLink})` : ""}`).join("\n\n")}
+${item.referenceLink ? `[Reference Link](${item.referenceLink})` : ""}`
+).join("\n\n")}
 `;
 
 const certificationsText = `## Certifications
@@ -92,7 +94,7 @@ async function getBlogContent() {
 async function getContent() {
   return `<SYSTEM>This document contains comprehensive information about ${USER.displayName}'s professional profile, portfolio, and blog content. It includes personal details, work experience, projects, achievements, certifications, and all published blog posts. This data is formatted for consumption by Large Language Models (LLMs) to provide accurate and up-to-date information about ${USER.displayName}'s background, skills, and expertise as a Design Engineer.</SYSTEM>
 
-# thevinduw.de
+# ${SITE_INFO.name}
 
 > A minimal portfolio, component registry, and blog to showcase my work as a Design Engineer.
 
