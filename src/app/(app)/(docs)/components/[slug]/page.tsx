@@ -12,8 +12,6 @@ import { Button } from "@/components/ui/button";
 import { Prose } from "@/components/ui/typography";
 import { SITE_INFO } from "@/config/site";
 import { PostKeyboardShortcuts } from "@/features/blog/components/post-keyboard-shortcuts";
-import { LLMCopyButtonWithViewOptions } from "@/features/blog/components/post-page-actions";
-import { PostShareMenu } from "@/features/blog/components/post-share-menu";
 import {
   findNeighbour,
   getPostBySlug,
@@ -144,13 +142,6 @@ export default async function Page({
         </Button>
 
         <div className="flex items-center gap-2">
-          <LLMCopyButtonWithViewOptions
-            markdownUrl={`/components/${post.slug}.mdx`}
-            isComponent
-          />
-
-          <PostShareMenu url={`/components/${post.slug}`} />
-
           {previous && (
             <Button variant="secondary" size="icon:sm" asChild>
               <Link href={`/components/${previous.slug}`}>
