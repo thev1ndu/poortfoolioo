@@ -5,7 +5,6 @@ import type { LucideProps } from "lucide-react";
 import { CornerDownLeftIcon } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useTheme } from "next-themes";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import {
@@ -76,8 +75,6 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
 
 export function CommandMenu({ posts }: { posts: Post[] }) {
   const router = useRouter();
-
-  const { setTheme } = useTheme();
 
   const [open, setOpen] = useState(false);
 

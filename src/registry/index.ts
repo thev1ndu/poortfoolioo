@@ -17,4 +17,4 @@ export const registry = {
     // Internal use only
     ...examples,
   ],
-} satisfies Registry;
+} as Registry;
