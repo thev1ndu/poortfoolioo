@@ -81,7 +81,7 @@ export const metadata: Metadata = {
         sizes: "any",
       },
       {
-        url: "https://assets.thevinduw.de/favicon.ico",
+        url: "https://assets.thevinduw.de/favicon-32x32.png",
         type: "any",
       },
     ],

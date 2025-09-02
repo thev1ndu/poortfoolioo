@@ -7,17 +7,17 @@ export const USER: User = {
   username: "thev1ndu",
   gender: "male",
   pronouns: "he/him",
-  bio: "Creating with code. Small details matter.",
+  bio: "Code. Create. Refine.",
   flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer",
-    "Open Source Contributor",
+    "Code. Create. Refine.",
+    "Software Developer",
+    "Machine Learning x DevOps Engineering Enthusiast",
   ],
   address: "Kadawatha, Sri Lanka",
   phoneNumber: "", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "aXRzdGh3OUBnbWFpbC5jb20=", // base64 encoded
   website: "https://thevinduw.de",
-  jobTitle: "Design Engineer",
+  jobTitle: "Software Developer",
   jobs: [
     {
       title: "Computer Science Undergraduate",
