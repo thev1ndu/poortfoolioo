@@ -2,22 +2,20 @@ import type { Certification } from "../types/certifications";
 
 export const CERTIFICATIONS: Certification[] = [
   {
-    title: "Introduction to Back-End Development",
+    title: "Introduction to Backend Development",
     issuer: "Meta",
     issuerIconName: "meta",
     issueDate: "2024-02",
     credentialID: "2CCZEG55Z9NN",
-    credentialURL:
-      "https://coursera.org/verify/2CCZEG55Z9NN",
+    credentialURL: "https://coursera.org/verify/2CCZEG55Z9NN",
   },
   {
-    title: "Introduction to Front-End Development",
+    title: "Introduction to Frontend Development",
     issuer: "Meta",
     issuerIconName: "meta",
     issueDate: "2024-02",
     credentialID: "A6825RFPF52L",
-    credentialURL:
-      "https://coursera.org/verify/A6825RFPF52L",
+    credentialURL: "https://coursera.org/verify/A6825RFPF52L",
   },
   {
     title: "Introduction to Networking",
@@ -33,8 +31,7 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: "Great Learning",
     issueDate: "2024-02",
     credentialID: "BCENWNIR",
-    credentialURL:
-      "https://verify.mygreatlearning.com/verify/BCENWNIR",
+    credentialURL: "https://verify.mygreatlearning.com/verify/BCENWNIR",
   },
   {
     title: "(ISC)² Candidate",
